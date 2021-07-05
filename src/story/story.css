@@ -1,0 +1,19 @@
+.Story {
+    padding-left: 1%;
+    padding-right: -5%;
+    width: 20%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.Story:hover {
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, .14);
+}
+
+a, h3, h5, p {
+    margin-right: 0px;
+}
+
+hr {
+    margin-left: -5%;
+}
