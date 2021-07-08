@@ -1,0 +1,14 @@
+.Stories {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.StoryLink {
+    width: 15%;
+    text-decoration: inherit;
+    color: inherit;
+}
