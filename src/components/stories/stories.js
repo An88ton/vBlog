@@ -1,12 +1,32 @@
 import {Link} from "react-router-dom";
-import { Redirect } from "react-router-dom";
 import Story from "../story/story";
 import "./stories.css"
-
-let stories = null;
+import {useEffect, useState} from "react";
 
 export default function () {
-    stories = [
+    const [stories, setStories] = useState([]);
+
+    useEffect(async () => {
+        fetch("http://localhost:8080/stories/").then((response) => {
+            response.json().then((arrStories) => {setStories(arrStories)});
+        });
+    })
+
+    return (
+        <div className="Stories">
+            {stories.map(story => {
+                return (<Link to={"/story/"+story.id} className={"StoryLink"}>
+                    <Story title={story.title}
+                           overview={story.overview}
+                           text={story.text}
+                           author={story.author}/>
+                </Link>)
+            })
+            }
+        </div>
+    )
+
+    /* [
         {
             id: 0,
             title: "I began to study react",
@@ -50,17 +70,5 @@ export default function () {
             author: "Jack"
         },
 
-    ]
-    return (
-        <div className="Stories">
-            {stories.map(story => {
-                return (<Link to={"/story/"+story.id} className={"StoryLink"}><Story title={story.title}
-                               overview={story.overview}
-                               text={story.text}
-                               author={story.author}
-                /></Link>)
-            })
-            }
-        </div>
-    )
+    ]*/
 }
