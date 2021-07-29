@@ -7,8 +7,11 @@ export default function () {
     const [stories, setStories] = useState([]);
 
     useEffect(async () => {
-        fetch("http://localhost:8080/stories/").then((response) => {
-            response.json().then((arrStories) => {setStories(arrStories)});
+        fetch("http://localhost:8080/stories/", {method: "GET", mode: "cors",
+            headers: {'Access-Control-Allow-Origin':'*',
+                      'Content-Type': 'application/json'}}).then((response) => {
+            response.json().then((arrStories) => {setStories(arrStories)
+            });
         });
     })
 
@@ -45,7 +48,7 @@ export default function () {
             id: 2,
             title: "I began to study react",
             overview: "It was really new experience",
-            text: "So now I making my projectsdvdfsvdsfbvdfsbdfsbdbdfsbdfbfsdbvdsfbvdsfbsdfbd",
+            text: "So now I making my project",
             author: "Jack"
         },
         {
