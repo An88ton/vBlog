@@ -8,7 +8,9 @@
 
 
 .StoryLink {
-    width: 15%;
+    margin-top: 0.5%;
+    max-width: 15%;
+    max-height: 1%;
     text-decoration: inherit;
     color: inherit;
 }

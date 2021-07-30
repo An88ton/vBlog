@@ -21,7 +21,7 @@ export default function () {
                 return (<Link to={"/story/"+story.id} className={"StoryLink"}>
                     <Story title={story.title}
                            overview={story.overview}
-                           text={story.text}
+                           text={story.text.substr(0, 58)}
                            author={story.author}/>
                 </Link>)
             })

@@ -1,19 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, Switch} from "react-router-dom"
 import './index.css';
 import App from './App';
-import Story from "./components/story/story";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-      {/*<Router>*/}
-      {/*      <Switch>*/}
-      {/*          <Route exact path={"/"} component={App}/>*/}
-      {/*          /!*<Route path={"/story"} component={Story}/>*!/*/}
-      {/*      </Switch>*/}
-      {/*</Router>*/}
     <App />
   </React.StrictMode>,
   document.getElementById('root')
